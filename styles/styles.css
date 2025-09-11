@@ -1,0 +1,63 @@
+/* NAV Styles */
+nav {
+    background-color: #333;
+    padding: 1rem;
+}
+
+nav a {
+    color: white;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* H1 Style */
+h1 {
+    color: #2c3e50;
+}
+
+/* Main Image */
+main img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Aside */
+aside {
+    width: 300px;
+    margin: 20px auto;
+    border: 2px solid #333;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Aside Image */
+aside img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Paragraphs */
+p {
+    padding: 0;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    border-top: 2px solid #333;
+    text-align: center;
+    padding-top: 10px;
+}

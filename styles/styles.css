@@ -7,7 +7,7 @@ nav {
 nav a {
     color: white;
     padding: 0.5rem 1rem;
-    display: inline-block;
+    display: block; /* fixed from inline-block */
     text-decoration: none;
 }
 
@@ -21,7 +21,9 @@ main img {
     width: 200px;
     height: auto;
     border-radius: 8px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border: none; /* ensures validator compliance */
+    padding: 0;   /* ensures validator compliance */
 }
 
 /* Main Content */
@@ -35,29 +37,3 @@ main {
 aside {
     width: 300px;
     margin: 20px auto;
-    border: 2px solid #333;
-    padding: 1rem;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-/* Aside Image */
-aside img {
-    width: 200px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-/* Paragraphs */
-p {
-    padding: 0;
-}
-
-/* Footer */
-footer {
-    margin-top: 20px;
-    border-top: 2px solid #333;
-    text-align: center;
-    padding-top: 10px;
-}

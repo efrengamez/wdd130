@@ -12,18 +12,12 @@
   --heading-font: 'Georgia', serif;
 }
 
-/* ==========
-   Reset Box
-   ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =====
-   Body
-   ===== */
 body {
   font-family: var(--body-font);
   color: var(--text-color);
@@ -31,18 +25,22 @@ body {
   line-height: 1.6;
 }
 
-/* ===========================
-   Limit Width & Center Layout
-   =========================== */
+/*
+=========================
+    LAYOUT & CONTAINER
+=========================
+*/
 header, main, footer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
 }
 
-/* ============
-   Typography
-   ============ */
+/*
+=================
+    TYPOGRAPHY
+=================
+*/
 h1, h2 {
   font-family: var(--heading-font);
   color: var(--primary-color);
@@ -52,70 +50,71 @@ p {
   margin-bottom: 1rem;
 }
 
-/* ==========
-   Navigation
-   ========== */
-nav {
-  margin-top: 1rem;
+/*
+=================
+    HEADER
+=================
+*/
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea los elementos a la izquierda como en la imagen */
+}
+
+header img {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+header nav {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
 nav a {
-  margin-right: 1rem;
   text-decoration: none;
   color: var(--primary-color);
   font-weight: bold;
 }
 
-/* =================
-   Footer & Socials
-   ================= */
-footer {
-  margin-top: 2rem;
-  border-top: 2px solid var(--primary-color);
-  padding-top: 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.socialmedia a {
-  text-decoration: none; /* remove underline */
-  margin: 0 0.5rem;
-}
-
-.socialmedia img {
-  width: 30px;
-  height: 30px;
-}
-
-/* ===============
-   Hero Section
-   =============== */
+/*
+===============
+    HERO
+===============
+*/
 .hero {
   position: relative;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .hero img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 10px;
 }
 
 .hero h1 {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 3rem;
-  background: rgba(0, 0, 0, 0.5);
+  font-size: 2.5rem;
+  background: rgba(0, 78, 137, 0.7); /* Color azul similar a la imagen */
   padding: 0.5rem 1rem;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
-/* ===================
-   Article Styling
-   =================== */
+/*
+=================
+    ARTICLE
+=================
+*/
 article {
   position: relative;
   margin: 2rem 0;
@@ -126,8 +125,37 @@ article {
 
 article img {
   float: right;
-  width: 200px;
+  width: 150px; /* Tamaño ajustado a 150px */
   margin: 0 0 1rem 1rem;
   border-radius: 8px;
   border: 2px solid var(--secondary-color);
+}
+
+/*
+==================
+    FOOTER
+==================
+*/
+footer {
+  margin-top: 2rem;
+  border-top: 2px solid var(--primary-color);
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+footer .socialmedia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.socialmedia img {
+  width: 25px; /* Tamaño ajustado a 25px */
+  height: 25px;
 }

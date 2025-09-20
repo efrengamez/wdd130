@@ -58,10 +58,11 @@ p {
 header {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinea los elementos a la izquierda como en la imagen */
+  align-items: flex-start; /* Alinea los elementos a la izquierda */
 }
 
-header img {
+/* Logo */
+header .logo {
   width: 150px;
   height: auto;
   display: block;
@@ -105,7 +106,7 @@ nav a {
   transform: translate(-50%, -50%);
   color: white;
   font-size: 2.5rem;
-  background: rgba(0, 78, 137, 0.7); /* Color azul similar a la imagen */
+  background: rgba(0, 78, 137, 0.7);
   padding: 0.5rem 1rem;
   border-radius: 8px;
 }
@@ -125,7 +126,7 @@ article {
 
 article img {
   float: right;
-  width: 150px; /* Tamaño ajustado a 150px */
+  width: 150px;
   margin: 0 0 1rem 1rem;
   border-radius: 8px;
   border: 2px solid var(--secondary-color);
@@ -155,7 +156,5 @@ footer .socialmedia {
   gap: 10px;
 }
 
-.socialmedia img {
-  width: 25px; /* Tamaño ajustado a 25px */
-  height: 25px;
-}
+/* Redes sociales */
+.socialmedia i

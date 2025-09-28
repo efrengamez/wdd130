@@ -1,8 +1,4 @@
-<link rel="stylesheet" href="styles/rafting.css">
-
-/* ==============
-   Root Variables
-   ============== */
+/* ============== Root Variables ============== */
 :root {
   --primary-color: #004e89;
   --secondary-color: #ffb703;
@@ -25,80 +21,65 @@ body {
   line-height: 1.6;
 }
 
-/*
-=========================
-    LAYOUT & CONTAINER
-=========================
-*/
+/* ========================= LAYOUT & CONTAINER ========================= */
 header, main, footer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
 }
 
-/*
-=================
-    TYPOGRAPHY
-=================
-*/
+/* ================= TYPOGRAPHY ================= */
 h1, h2 {
   font-family: var(--heading-font);
   color: var(--primary-color);
 }
-
 p {
   margin-bottom: 1rem;
 }
 
-/*
-=================
-    HEADER
-=================
-*/
+/* ================= HEADER ================= */
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Alinea los elementos a la izquierda */
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
 }
 
-/* Logo */
 header .logo {
-  width: 150px;
+  width: 120px;
   height: auto;
-  display: block;
-  margin-bottom: 0.5rem;
 }
 
 header nav {
   display: flex;
-  gap: 1rem;
-  margin-top: 0.5rem;
+  justify-content: flex-end;
+  gap: 1.5rem;
 }
 
-nav a {
+header nav a {
+  color: white;
   text-decoration: none;
-  color: var(--primary-color);
   font-weight: bold;
 }
 
-/*
-===============
-    HERO
-===============
-*/
+header nav a:hover {
+  color: var(--secondary-color);
+}
+
+/* =============== HERO =============== */
 .hero {
   position: relative;
   text-align: center;
   margin-bottom: 2rem;
 }
-
 .hero img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 10px;
 }
-
 .hero h1 {
   position: absolute;
   top: 50%;
@@ -111,11 +92,7 @@ nav a {
   border-radius: 8px;
 }
 
-/*
-=================
-    ARTICLE
-=================
-*/
+/* ================= ARTICLE ================= */
 article {
   position: relative;
   margin: 2rem 0;
@@ -123,7 +100,6 @@ article {
   background: #f9f9f9;
   border-left: 4px solid var(--accent-color);
 }
-
 article img {
   float: right;
   width: 150px;
@@ -132,11 +108,57 @@ article img {
   border: 2px solid var(--secondary-color);
 }
 
-/*
-==================
-    FOOTER
-==================
-*/
+/* ====== HISTORY SECTION ====== */
+.history {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: 1fr 250px 1fr;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.history-grid img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ====== ADVENTURE SECTION ====== */
+.adventures {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.adventure-gallery {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.adventure-gallery figure {
+  flex: 1 1 150px;
+  text-align: center;
+}
+
+.adventure-gallery img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 8px;
+}
+
+.adventure-gallery figcaption {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: var(--primary-color);
+}
+
+/* ================== FOOTER ================== */
 footer {
   margin-top: 2rem;
   border-top: 2px solid var(--primary-color);
@@ -156,165 +178,6 @@ footer .socialmedia {
   gap: 10px;
 }
 
-/* Redes sociales */
-.socialmedia i
-/* ==============
-   Root Variables
-   ============== */
-:root {
-  --primary-color: #004e89;
-  --secondary-color: #ffb703;
-  --accent-color: #fb8500;
-  --text-color: #333333;
-  --body-font: 'Arial', sans-serif;
-  --heading-font: 'Georgia', serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--body-font);
-  color: var(--text-color);
-  background-color: #ffffff;
-  line-height: 1.6;
-}
-
-/*
-=========================
-    LAYOUT & CONTAINER
-=========================
-*/
-header, main, footer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-/*
-=================
-    TYPOGRAPHY
-=================
-*/
-h1, h2 {
-  font-family: var(--heading-font);
-  color: var(--primary-color);
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
-/*
-=================
-    HEADER
-=================
-*/
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-/* Logo */
-header .logo {
-  width: 150px;
-  height: auto;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-header nav {
-  display: flex;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--primary-color);
-  font-weight: bold;
-}
-
-/*
-===============
-    HERO
-===============
-*/
-.hero {
-  position: relative;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.hero img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-}
-
-.hero h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 2.5rem;
-  background: rgba(0, 78, 137, 0.7);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-}
-
-/*
-=================
-    ARTICLE
-=================
-*/
-article {
-  position: relative;
-  margin: 2rem 0;
-  padding: 1rem;
-  background: #f9f9f9;
-  border-left: 4px solid var(--accent-color);
-}
-
-article img {
-  float: right;
-  width: 150px;
-  margin: 0 0 1rem 1rem;
-  border-radius: 8px;
-  border: 2px solid var(--secondary-color);
-}
-
-/*
-==================
-    FOOTER
-==================
-*/
-footer {
-  margin-top: 2rem;
-  border-top: 2px solid var(--primary-color);
-  padding-top: 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-footer p {
-  margin-bottom: 0.5rem;
-}
-
-footer .socialmedia {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-/* Redes sociales */
-.socialmedia a {
+footer .socialmedia a {
   text-decoration: none;
 }

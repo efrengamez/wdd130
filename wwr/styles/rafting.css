@@ -175,9 +175,18 @@ footer .socialmedia {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
-footer .socialmedia a {
-  text-decoration: none;
+/* Tamaño uniforme de íconos */
+footer .socialmedia img {
+  width: 30px;
+  height: auto;
+  transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+/* Efecto hover */
+footer .socialmedia img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2);
 }

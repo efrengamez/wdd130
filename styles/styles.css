@@ -58,3 +58,13 @@ aside {
     grid-row: 1/2;
     margin: 1rem;
 }
+
+/* Aside Image */
+aside img {
+    width: 100%;
+    max-width: 250px; /* tamaño máximo */
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto; /* centrada y con espacio debajo */
+    border-radius: 8px;
+}

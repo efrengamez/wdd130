@@ -100,32 +100,31 @@
 /* Main Rapids Adventure Logo */
 #main-logo {
     display: block;
-    width: 150px;        
-    max-width: 100%;     
+    width: 180px;
+    max-width: 100%;
     height: auto;
     margin: 1rem auto;
-    padding: 0;          
+    padding: 0;
 }
 
-
-.socialmedia {
-    width: 40px;         
-    height: 40px;
-    margin: 0 5px;
+/* Social Media Icons */
+.socialmedia a {
     display: inline-block;
+    margin: 0 5px;
 }
 
+.social-icon {
+    width: 40px;
+    height: 40px;
+}
 
 @media (max-width: 600px) {
     #main-logo {
-        width: 100px;   
+        width: 120px;
     }
 
     .social-icon {
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
     }
 }
-
-
-

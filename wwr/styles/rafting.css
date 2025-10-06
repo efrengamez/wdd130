@@ -99,19 +99,18 @@
 /* ============ LOGO & SOCIAL ICONS ============ */
 /* Main Rapids Adventure Logo */
 #main-logo {
-    width: 100px;        /* tamaño base */
-    max-width: 70%;      /* no exceda el 70% del contenedor */
-    height: auto;
-    padding: 5px !important;  /* espacio interno */
     display: block;
-    margin: 1rem auto;   /* centrado con margen arriba y abajo */
+    width: 150px;        /* tamaño fijo máximo */
+    max-width: 100%;     /* no exceda el contenedor */
+    height: auto;
+    margin: 1rem auto;
+    padding: 0;          /* elimina padding que no afecta tamaño real */
 }
 
 /* Social Media Icons */
 .social-icon {
-    width: 25px;         /* tamaño base */
-    height: 25px;
-    padding: 5px !important;  /* agrega espacio interno */
+    width: 40px;         /* tamaño fijo */
+    height: 40px;
     margin: 0 5px;
     display: inline-block;
 }
@@ -119,14 +118,14 @@
 /* Ajustes responsivos para móviles */
 @media (max-width: 600px) {
     #main-logo {
-        width: 80px;
+        width: 100px;    /* más pequeño en móvil */
     }
 
     .social-icon {
-        width: 20px;
-        height: 20px;
-        padding: 3px !important; /* reducir padding en móviles */
+        width: 25px;
+        height: 25px;
     }
 }
+
 
 

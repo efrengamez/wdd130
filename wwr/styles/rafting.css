@@ -99,7 +99,7 @@
 /* ============ LOGO & SOCIAL ICONS ============ */
 /* Main Rapids Adventure Logo */
 #main-logo {
-    width: 100px;        /* mucho más pequeño */
+    width: 100px;        /* tamaño más pequeño */
     max-width: 70%;      /* no exceda el 70% del contenedor */
     height: auto;
     display: block;
@@ -108,7 +108,7 @@
 
 /* Social Media Icons */
 .social-icon {
-    width: 25px;         /* más pequeños */
+    width: 25px;         /* tamaño más pequeño */
     height: 25px;
     margin: 0 5px;
     display: inline-block;
@@ -125,3 +125,4 @@
         height: 20px;
     }
 }
+

@@ -1,192 +1,97 @@
-/* ============== Root Variables ============== */
-:root {
-  --primary-color: #004e89;
-  --secondary-color: #ffb703;
-  --accent-color: #fb8500;
-  --text-color: #333333;
-  --body-font: 'Arial', sans-serif;
-  --heading-font: 'Georgia', serif;
+/* ============ CONTACT PAGE ============ */
+.contact-info {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
-body {
-  font-family: var(--body-font);
-  color: var(--text-color);
-  background-color: #ffffff;
-  line-height: 1.6;
+.contact-info a:hover {
+    text-decoration: underline;
 }
 
-/* ========================= LAYOUT & CONTAINER ========================= */
-header, main, footer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+.map-container {
+    margin: 1rem 0 2rem;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-/* ================= TYPOGRAPHY ================= */
-h1, h2 {
-  font-family: var(--heading-font);
-  color: var(--primary-color);
-}
-p {
-  margin-bottom: 1rem;
-}
-
-/* ================= HEADER ================= */
-header {
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  align-items: center;
-  background-color: var(--primary-color);
-  color: white;
-  padding: 1rem;
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border: 2px solid var(--accent-color);
 }
 
-header .logo {
-  width: 120px;
-  height: auto;
+.contact-form label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    font-weight: bold;
 }
 
-header nav {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1.5rem;
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-header nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+.contact-form fieldset {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
 }
 
-header nav a:hover {
-  color: var(--secondary-color);
+.contact-form legend {
+    font-weight: bold;
 }
 
-/* =============== HERO =============== */
-.hero {
-  position: relative;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.hero img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-}
-.hero h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 2.5rem;
-  background: rgba(0, 78, 137, 0.7);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+.contact-form input[type="checkbox"] {
+    margin-right: 0.5rem;
 }
 
-/* ================= ARTICLE ================= */
-article {
-  position: relative;
-  margin: 2rem 0;
-  padding: 1rem;
-  background: #f9f9f9;
-  border-left: 4px solid var(--accent-color);
-}
-article img {
-  float: right;
-  width: 150px;
-  margin: 0 0 1rem 1rem;
-  border-radius: 8px;
-  border: 2px solid var(--secondary-color);
+.contact-form button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-/* ====== HISTORY SECTION ====== */
-.history {
-  margin: 2rem 0;
-  text-align: center;
+.contact-form button:hover {
+    background-color: var(--accent-color);
 }
 
-.history-grid {
-  display: grid;
-  grid-template-columns: 1fr 250px 1fr;
-  gap: 1rem;
-  align-items: center;
-  margin-top: 1rem;
+/* Employee Grid */
+.employee-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-.history-grid img {
-  width: 100%;
-  border-radius: 10px;
+.employee {
+    text-align: center;
+    flex: 1 1 150px;
 }
 
-/* ====== ADVENTURE SECTION ====== */
-.adventures {
-  margin: 2rem 0;
-  text-align: center;
-}
-
-.adventure-gallery {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-.adventure-gallery figure {
-  flex: 1 1 150px;
-  text-align: center;
-}
-
-.adventure-gallery img {
-  width: 100%;
-  max-width: 200px;
-  border-radius: 8px;
-}
-
-.adventure-gallery figcaption {
-  margin-top: 0.5rem;
-  font-style: italic;
-  color: var(--primary-color);
-}
-
-/* ================== FOOTER ================== */
-footer {
-  margin-top: 2rem;
-  border-top: 2px solid var(--primary-color);
-  padding-top: 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-footer p {
-  margin-bottom: 0.5rem;
-}
-
-footer .socialmedia {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
-
-/* Tamaño uniforme de íconos */
-footer .socialmedia img {
-  width: 30px;
-  height: auto;
-  transition: transform 0.2s ease, filter 0.3s ease;
-}
-
-/* Efecto hover */
-footer .socialmedia img:hover {
-  transform: scale(1.2);
-  filter: brightness(1.2);
+.employee img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color);
+    object-fit: cover;
 }

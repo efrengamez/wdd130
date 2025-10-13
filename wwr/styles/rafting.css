@@ -128,3 +128,44 @@
         height: 30px;
     }
 }
+
+/* ============ GLOBAL LAYOUT ============ */
+.container { max-width:1100px; margin:0 auto; padding:0 1rem; box-sizing: border-box; }
+.site-header { background:#fff; border-bottom:1px solid #eee; }
+.header-inner { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:0.75rem 0; }
+
+/* Logo (controla tamaño grande) */
+.logo { width: 160px; max-width: 100%; height: auto; display:block; }
+
+/* Navigation simple */
+.main-nav a { margin-left:1rem; text-decoration:none; color: #003; font-weight:600; }
+
+/* VISUALLY HIDDEN (for accessibility) */
+.visually-hidden { position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
+
+/* ============ HERO ============ */
+.hero { position:relative; overflow:hidden; }
+.hero-img { width:100%; height:auto; display:block; filter:contrast(1.05) saturate(1.02); }
+.hero-content { position:absolute; left:2rem; top:25%; color:#fff; max-width:580px; background: rgba(0,0,0,0.25); padding:1rem; border-radius:8px; }
+.hero-content h1 { margin:0 0 0.5rem; font-size:2rem; }
+.btn { display:inline-block; padding:0.6rem 1rem; background:#0077b6; color:#fff; border-radius:6px; text-decoration:none; font-weight:700; }
+
+/* ============ GRID (features & trips) ============ */
+.features-grid, .trips-grid { display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); margin-top:1rem; }
+.card, .trip-card { background:#fff; padding:1rem; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+.trip-card img { width:100%; height:auto; display:block; border-radius:6px; object-fit:cover; }
+
+/* ============ NEWSLETTER ============ */
+.newsletter-form { display:flex; gap:0.5rem; align-items:center; margin-top:0.5rem; }
+.newsletter-form input[type="email"] { flex:1; padding:0.6rem; border-radius:6px; border:1px solid #ccc; }
+
+/* ============ FOOTER ============ */
+.site-footer { background:#f7f7f7; padding:1rem 0; margin-top:2rem; text-align:center; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:700px) {
+  .hero-content { left:1rem; top:20%; padding:0.8rem; max-width:90%; }
+  .logo { width:120px; }
+  .main-nav { display:flex; gap:0.5rem; font-size:0.95rem; }
+  .newsletter-form { flex-direction:column; align-items:stretch; }
+}

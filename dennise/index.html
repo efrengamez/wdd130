@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Denisse 💖</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Música -->
+    <audio id="music" loop>
+        <source src="audio/ojitos-lindos.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Corazones -->
+    <div class="hearts"></div>
+
+    <!-- Contenido -->
+    <div class="container" id="screen1">
+        <h1>Hey Denisse 🥰</h1>
+        <p>Tengo una pregunta importante…</p>
+        <button onclick="nextScreen()">Dime 💬</button>
+    </div>
+
+    <div class="container hidden" id="screen2">
+        <h2>¿Quieres ser mi San Valentín? 💘</h2>
+        <div class="buttons">
+            <button onclick="yes()">Sí ❤️</button>
+            <button id="noBtn" onmouseover="moveNo()">Mmm… 🤨</button>
+        </div>
+    </div>
+
+    <div class="container hidden" id="screen3">
+        <h1>YAY!!! 😍</h1>
+        <p>Sabía que dirías que sí 💕</p>
+        <p>Gracias por hacer mi mundo más bonito ✨</p>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

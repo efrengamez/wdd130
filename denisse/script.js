@@ -51,10 +51,10 @@ function final() {
 function no() {
   intentos++;
   const mensajes = [
-    "¿segura? 👀",
-    "esto ya estaba escrito 😌",
+    "¿segura? ",
+    "esto ya estaba escrito ",
     "no aceptamos negativas",
-    "ok pero… be my valentin 💗"
+    "ok pero… be my valentin "
   ];
   alert(mensajes[intentos % mensajes.length]);
 }

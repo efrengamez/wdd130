@@ -83,3 +83,28 @@ button:last-child {
 button:hover {
   transform: scale(1.08);
 }
+
+.hidden {
+  display: none;
+}
+
+#invitacion h2 {
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.detalle {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 6px 0;
+}
+
+.elote {
+  width: 90px;
+  margin: 15px 0;
+}
+
+.final {
+  font-style: italic;
+  color: #666;
+}

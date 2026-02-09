@@ -1,8 +1,8 @@
 let intentos = 0;
 
 function si() {
-  document.getElementById("texto").innerHTML =
-    "JAJA sabía que sí 🤍<br>entonces ya somos oficialmente 💘";
+  document.getElementById("pregunta").style.display = "none";
+  document.getElementById("invitacion").style.display = "block";
 }
 
 function no() {
@@ -10,8 +10,8 @@ function no() {
 
   const mensajes = [
     "mmm… ¿segura? 👀",
-    "piénsalo con el corazón 😌",
-    "valentín no aceptaría un no",
+    "piénsalo bien 😌",
+    "un elotito no se rechaza",
     "ok pero… be my valentin? 💗"
   ];
 

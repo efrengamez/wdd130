@@ -34,15 +34,15 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             color: #b30059;
-            margin: 10px 0;
+            margin: 12px 0;
         }
 
         button {
             font-size: 1.4rem;
-            padding: 15px 25px;
-            margin: 10px;
+            padding: 15px 28px;
+            margin: 12px;
             border-radius: 30px;
             border: none;
             cursor: pointer;
@@ -58,26 +58,46 @@
         }
 
         #mensajeNo {
-            margin-top: 15px;
+            margin-top: 18px;
             font-size: 1.2rem;
             color: #8b0051;
         }
 
         img {
-            width: 180px;
-            margin: 15px 0;
+            width: 190px;
+            margin: 18px 0;
         }
 
         #letra {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #b30059;
         }
 
+        /* Corazones */
         @keyframes caer {
             to {
                 transform: translateY(100vh);
                 opacity: 0;
             }
+        }
+
+        /* Parpadeo final */
+        @keyframes parpadeo {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .parpadea {
+            animation: parpadeo 1.2s infinite;
         }
     </style>
 </head>
@@ -90,7 +110,7 @@
     <div id="pantalla1" class="pantalla activa">
         <h1>heidy dennisee &lt;3</h1>
 
-        <img src="valentin.png" alt="Valentín Elizalde" />
+        <img src="valentinelizalde.png" alt="Valentín Elizalde" />
 
         <h1>be my</h1>
         <h1>(valentín)</h1>
@@ -103,8 +123,8 @@
 
     <!-- PANTALLA 2 -->
     <div id="pantalla2" class="pantalla">
-        <h1>14 DE FEB</h1>
         <h1>PASO POR TI</h1>
+        <h1>OKAY PASO POR TI</h1>
         <h1>A LAS 5:00 EN PUNTO !!!!</h1>
     </div>
 
@@ -114,28 +134,28 @@
     </div>
 
     <!-- PANTALLA 4 -->
-    <div id="pantalla4" class="pantalla">
-        <img src="final.png" .png" alt="final" />
+    <div id="pantalla4" class="pantalla parpadea">
         <h1>por su atención gracias</h1>
         <h1>nos vemos en un ratoooooo</h1>
     </div>
 
     <script>
-        /* ---------- NO ALERT, SOLO TEXTO ---------- */
+        /* ---------- NO ---------- */
         function respuestaNo() {
             document.getElementById("mensajeNo").innerText =
                 "no se admite esta respuesta, por favor seleccione otra";
         }
 
-        /* ---------- INICIO CUANDO DICE QUE SÍ ---------- */
+        /* ---------- SÍ ---------- */
         function respuestaSi() {
             document.getElementById("musica").play();
             mostrarPantalla(2);
 
+            // más tiempo en la pantalla 2
             setTimeout(() => {
                 mostrarPantalla(3);
                 escribirLetra();
-            }, 2000);
+            }, 4000);
         }
 
         /* ---------- CAMBIO DE PANTALLAS ---------- */
@@ -146,7 +166,7 @@
             document.getElementById("pantalla" + num).classList.add("activa");
         }
 
-        /* ---------- LETRA ---------- */
+        /* ---------- LETRA MÁS LENTA ---------- */
         const letra = "llegué borrachoooo de amooooor";
         let indice = 0;
 
@@ -163,11 +183,13 @@
 
                 if (indice >= letra.length) {
                     clearInterval(intervalo);
+
+                    // más pausa antes del final
                     setTimeout(() => {
                         mostrarPantalla(4);
-                    }, 1200);
+                    }, 2500);
                 }
-            }, 100);
+            }, 180); // ← MÁS LENTO
         }
 
         /* ---------- CORAZONES ---------- */
@@ -177,11 +199,11 @@
             c.style.position = "fixed";
             c.style.left = Math.random() * 100 + "vw";
             c.style.top = "-20px";
-            c.style.fontSize = "24px";
-            c.style.animation = "caer 3s linear forwards";
+            c.style.fontSize = "26px";
+            c.style.animation = "caer 4s linear forwards";
             document.body.appendChild(c);
 
-            setTimeout(() => c.remove(), 3000);
+            setTimeout(() => c.remove(), 4000);
         }
     </script>
 

@@ -1,18 +1,21 @@
-const heartsContainer = document.querySelector('.hearts');
+let intentos = 0;
 
-function createHeart() {
-  const heart = document.createElement('div');
-  heart.classList.add('heart');
-  heart.innerHTML = '❤️';
-
-  heart.style.left = Math.random() * 100 + 'vw';
-  heart.style.animationDuration = (2 + Math.random() * 3) + 's';
-
-  heartsContainer.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 5000);
+function si() {
+  document.getElementById("texto").innerHTML =
+    "sabía que dirías que sí 🤍<br>ya somos valentineeee ✨";
 }
 
-setInterval(createHeart, 300);
+function no() {
+  intentos++;
+
+  const texto = document.getElementById("texto");
+
+  const mensajes = [
+    "¿segura? 🥺",
+    "piénsalo otra vez, sí? 👀",
+    "mmm… creo que te equivocaste 😌",
+    "ok, pero… ¿quieres ser mi valentineeee? 🤍"
+  ];
+
+  texto.innerHTML = mensajes[intentos % mensajes.length];
+}

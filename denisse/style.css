@@ -18,55 +18,54 @@ body {
   align-items: center;
 }
 
+/* Caja principal */
 .container {
   background: rgba(255,255,255,0.9);
-  padding: 30px;
-  border-radius: 22px;
+  padding: 35px;
+  border-radius: 24px;
   text-align: center;
-  max-width: 90%;
+  max-width: 92%;
   box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
+/* Nombre */
 h1 {
+  font-size: 2.5rem;
   color: #444;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
+/* Pregunta */
 .pregunta {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin: 20px 0;
+  gap: 14px;
+  margin-bottom: 30px;
 }
 
 .pregunta span {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   color: #555;
 }
 
 .pregunta img {
-  width: 80px;
-  height: auto;
-  border-radius: 12px;
+  width: 110px;
+  border-radius: 14px;
 }
 
-p {
-  color: #666;
-  margin-bottom: 25px;
-}
-
+/* Botones */
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 18px;
 }
 
 button {
-  padding: 10px 26px;
+  padding: 14px 34px;
+  font-size: 1.2rem;
   border: none;
-  border-radius: 25px;
-  font-size: 1rem;
+  border-radius: 30px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -78,33 +77,31 @@ button:first-child {
 
 button:last-child {
   background: #e5e5e5;
+  color: #555;
 }
 
 button:hover {
   transform: scale(1.08);
 }
 
+/* Invitación */
 .hidden {
   display: none;
 }
 
 #invitacion h2 {
+  font-size: 2rem;
   color: #444;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .detalle {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   color: #555;
-  margin: 6px 0;
+  margin: 8px 0;
 }
 
 .elote {
-  width: 90px;
-  margin: 15px 0;
-}
-
-.final {
-  font-style: italic;
-  color: #666;
+  width: 130px;
+  margin-top: 18px;
 }

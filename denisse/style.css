@@ -2,36 +2,57 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
 }
 
+/* Fondo rosa pixeleado */
 body {
   height: 100vh;
-  background: linear-gradient(135deg, #f8cdda, #fceff5);
+  background-color: #ffc0cb;
+  background-image:
+    linear-gradient(90deg, rgba(255,182,193,.4) 50%, transparent 50%),
+    linear-gradient(rgba(255,182,193,.4) 50%, transparent 50%);
+  background-size: 20px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255,255,255,0.9);
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 22px;
   text-align: center;
   max-width: 90%;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  animation: fade 1.5s ease;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
 h1 {
-  font-size: 2rem;
   color: #444;
   margin-bottom: 15px;
 }
 
-p {
-  font-size: 1.2rem;
+.pregunta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.pregunta span {
+  font-size: 1.4rem;
   color: #555;
+}
+
+.pregunta img {
+  width: 80px;
+  height: auto;
+  border-radius: 12px;
+}
+
+p {
+  color: #666;
   margin-bottom: 25px;
 }
 
@@ -42,35 +63,23 @@ p {
 }
 
 button {
-  padding: 10px 25px;
+  padding: 10px 26px;
   border: none;
   border-radius: 25px;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 button:first-child {
-  background: #ff8fa3;
+  background: #ff7aa2;
   color: white;
 }
 
 button:last-child {
-  background: #e0e0e0;
-  color: #555;
+  background: #e5e5e5;
 }
 
 button:hover {
-  transform: scale(1.05);
-}
-
-@keyframes fade {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  transform: scale(1.08);
 }

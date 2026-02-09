@@ -2,61 +2,189 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>💗</title>
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: repeating-linear-gradient(45deg,
+                    #ffc0cb,
+                    #ffc0cb 10px,
+                    #ffb6c1 10px,
+                    #ffb6c1 20px);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .pantalla {
+            display: none;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .pantalla.activa {
+            display: flex;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #b30059;
+            margin: 10px 0;
+        }
+
+        button {
+            font-size: 1.4rem;
+            padding: 15px 25px;
+            margin: 10px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .si {
+            background: #ff69b4;
+            color: white;
+        }
+
+        .no {
+            background: #e0e0e0;
+        }
+
+        #mensajeNo {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #8b0051;
+        }
+
+        img {
+            width: 180px;
+            margin: 15px 0;
+        }
+
+        #letra {
+            font-size: 2rem;
+            color: #b30059;
+        }
+
+        @keyframes caer {
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <audio id="musica">
-        <source src="musica.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="musica" src="borrachodeamor.mp3"></audio>
 
-    <!-- Corazones -->
-    <div id="hearts"></div>
+    <!-- PANTALLA 1 -->
+    <div id="pantalla1" class="pantalla activa">
+        <h1>heidy dennisee &lt;3</h1>
 
-    <div class="container">
+        <img src="valentinelizalde.png" alt="Valentín Elizalde" />
 
-        <!-- PANTALLA 1 -->
-        <div id="pantalla1">
-            <h1>heidy dennisee &lt;3</h1>
+        <h1>be my</h1>
+        <h1>(valentín)</h1>
 
-            <div class="pregunta">
-                <span>be my</span>
-                <img src="valentin.png" alt="Valentín Elizalde">
-            </div>
+        <button class="si" onclick="respuestaSi()">WOW SUPER SI</button>
+        <button class="no" onclick="respuestaNo()">neeembre no</button>
 
-            <div class="buttons">
-                <button onclick="si()">WOW SUPER SI</button>
-                <button onclick="no()">neeembre no</button>
-            </div>
-        </div>
-
-        <!-- PANTALLA 2 -->
-        <div id="pantalla2" class="hidden">
-            <h2>omg</h2>
-            <p class="grande">OKAY PASO POR TI<br>A LAS 5:00 EN PUNTO !!!!</p>
-        </div>
-
-        <!-- PANTALLA 3 -->
-        <div id="pantalla3" class="hidden">
-            <p id="letra" class="letra"></p>
-        </div>
-
-        <!-- PANTALLA FINAL -->
-        <div id="pantalla4" class="hidden">
-            <img src="final.png" alt="final" class="final-img">
-            <p class="final-text">
-                por su atención gracias<br>
-                nos vemos en un ratoooooo
-            </p>
-        </div>
-
+        <p id="mensajeNo"></p>
     </div>
 
-    <script src="script.js"></script>
+    <!-- PANTALLA 2 -->
+    <div id="pantalla2" class="pantalla">
+        <h1>PASO POR TI</h1>
+        <h1>OKAY PASO POR TI</h1>
+        <h1>A LAS 5:00 EN PUNTO !!!!</h1>
+    </div>
+
+    <!-- PANTALLA 3 -->
+    <div id="pantalla3" class="pantalla">
+        <p id="letra"></p>
+    </div>
+
+    <!-- PANTALLA 4 -->
+    <div id="pantalla4" class="pantalla">
+        <img src="vasito.png" alt="final" />
+        <h1>por su atención gracias</h1>
+        <h1>nos vemos en un ratoooooo</h1>
+    </div>
+
+    <script>
+        /* ---------- NO ALERT, SOLO TEXTO ---------- */
+        function respuestaNo() {
+            document.getElementById("mensajeNo").innerText =
+                "no se admite esta respuesta, por favor seleccione otra";
+        }
+
+        /* ---------- INICIO CUANDO DICE QUE SÍ ---------- */
+        function respuestaSi() {
+            document.getElementById("musica").play();
+            mostrarPantalla(2);
+
+            setTimeout(() => {
+                mostrarPantalla(3);
+                escribirLetra();
+            }, 2000);
+        }
+
+        /* ---------- CAMBIO DE PANTALLAS ---------- */
+        function mostrarPantalla(num) {
+            document.querySelectorAll(".pantalla").forEach(p => {
+                p.classList.remove("activa");
+            });
+            document.getElementById("pantalla" + num).classList.add("activa");
+        }
+
+        /* ---------- LETRA ---------- */
+        const letra = "llegué borrachoooo de amooooor";
+        let indice = 0;
+
+        function escribirLetra() {
+            const contenedor = document.getElementById("letra");
+            contenedor.innerText = "";
+            indice = 0;
+
+            const intervalo = setInterval(() => {
+                contenedor.innerText += letra[indice];
+                indice++;
+
+                if (indice > 7) crearCorazon();
+
+                if (indice >= letra.length) {
+                    clearInterval(intervalo);
+                    setTimeout(() => {
+                        mostrarPantalla(4);
+                    }, 1200);
+                }
+            }, 100);
+        }
+
+        /* ---------- CORAZONES ---------- */
+        function crearCorazon() {
+            const c = document.createElement("div");
+            c.innerText = "💗";
+            c.style.position = "fixed";
+            c.style.left = Math.random() * 100 + "vw";
+            c.style.top = "-20px";
+            c.style.fontSize = "24px";
+            c.style.animation = "caer 3s linear forwards";
+            document.body.appendChild(c);
+
+            setTimeout(() => c.remove(), 3000);
+        }
+    </script>
+
 </body>
 
 </html>

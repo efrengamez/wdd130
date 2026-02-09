@@ -18,56 +18,63 @@ body {
   align-items: center;
 }
 
-/* Caja principal */
+/* Caja */
 .container {
   background: rgba(255,255,255,0.9);
-  padding: 35px;
-  border-radius: 24px;
+  padding: 40px;
+  border-radius: 26px;
   text-align: center;
-  max-width: 92%;
+  max-width: 95%;
   box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
-/* Nombre */
-h1 {
-  font-size: 2.5rem;
-  color: #444;
-  margin-bottom: 20px;
+/* Pantallas */
+.hidden {
+  display: none;
 }
 
-/* Pregunta */
+/* Pantalla 1 */
+h1 {
+  font-size: 2.6rem;
+  color: #444;
+  margin-bottom: 25px;
+}
+
 .pregunta {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 14px;
   margin-bottom: 30px;
 }
 
 .pregunta span {
-  font-size: 1.8rem;
-  color: #555;
+  font-size: 1.9rem;
 }
 
 .pregunta img {
-  width: 110px;
+  width: 120px;
   border-radius: 14px;
 }
 
 /* Botones */
 .buttons {
   display: flex;
-  justify-content: center;
   gap: 18px;
+  justify-content: center;
 }
 
 button {
-  padding: 14px 34px;
+  padding: 15px 36px;
   font-size: 1.2rem;
   border: none;
   border-radius: 30px;
   cursor: pointer;
   transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.08);
 }
 
 button:first-child {
@@ -77,31 +84,29 @@ button:first-child {
 
 button:last-child {
   background: #e5e5e5;
-  color: #555;
 }
 
-button:hover {
-  transform: scale(1.08);
-}
-
-/* Invitación */
-.hidden {
-  display: none;
-}
-
-#invitacion h2 {
-  font-size: 2rem;
-  color: #444;
+/* Pantalla 2 */
+h2 {
+  font-size: 2.4rem;
   margin-bottom: 20px;
 }
 
-.detalle {
-  font-size: 1.4rem;
-  color: #555;
-  margin: 8px 0;
+.grande {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
-.elote {
-  width: 130px;
-  margin-top: 18px;
+.continuar {
+  margin-top: 25px;
+  background: #ff7aa2;
+  color: white;
+}
+
+/* Pantalla 3 */
+.letra {
+  font-size: 2rem;
+  font-style: italic;
+  color: #444;
+  line-height: 1.4;
 }

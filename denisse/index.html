@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -10,17 +10,16 @@
 
 <body>
 
-    <!-- Música (se activa al dar WOW SUPER SI) -->
     <audio id="musica" loop>
         <source src="musica.mp3" type="audio/mpeg">
     </audio>
 
     <div class="container">
 
-        <h1>heidy dennisee &lt;3</h1>
+        <!-- PANTALLA 1 -->
+        <div id="pantalla1">
+            <h1>heidy dennisee &lt;3</h1>
 
-        <!-- PREGUNTA -->
-        <div id="pregunta">
             <div class="pregunta">
                 <span>be my</span>
                 <img src="valentin.png" alt="Valentín Elizalde">
@@ -32,15 +31,20 @@
             </div>
         </div>
 
-        <!-- INVITACIÓN -->
-        <div id="invitacion" class="hidden">
-            <h2>omg entonces esto es un date !! 😭✨</h2>
+        <!-- PANTALLA 2 -->
+        <div id="pantalla2" class="hidden">
+            <h2>paso por ti</h2>
+            <p class="grande">OKAY PASO POR TI<br> A LAS 5:00 EN PUNTO !!!!</p>
 
-            <p class="detalle">📅 sábado 14 de febrero</p>
-            <p class="detalle">⏰ 7:00 pm</p>
-            <p class="detalle">🌽 ir por un elote</p>
+            <button class="continuar" onclick="continuar()">👀</button>
+        </div>
 
-            <img src="elote.png" alt="elote" class="elote">
+        <!-- PANTALLA 3 -->
+        <div id="pantalla3" class="hidden">
+            <p class="letra">
+                llegué borrachoooo de amooooor<br>
+                como todas las noches
+            </p>
         </div>
 
     </div>

@@ -3,7 +3,19 @@ const FECHA_BODA = new Date('2026-12-05T15:00:00');   // 5 dic 2026, 3:00 pm
 const WHATSAPP   = '521XXXXXXXXXX';                    // lada + número, sin + ni espacios
 const MENSAJE    = 'Hola, confirmo mi asistencia a la boda de Luis y Sinai. Nombre y número de personas: ';
 
-/* ---------- 2. CUENTA REGRESIVA ---------- */
+/* ---------- 2. MARCOS CUADRADOS PARA LAS FOTOS ---------- */
+/* Mete cada foto (carruseles, parroquia y copas) en un marco cuadrado
+   con fondo difuminado, para que se vea completa y sin estirar. */
+document.querySelectorAll('.pista img, .foto-lugar').forEach(img => {
+  const marco = document.createElement('div');
+  marco.className = 'marco';
+  marco.style.setProperty('--bg', `url("${img.getAttribute('src')}")`);
+  img.className = '';
+  img.parentNode.insertBefore(marco, img);
+  marco.appendChild(img);
+});
+
+/* ---------- 3. CUENTA REGRESIVA ---------- */
 const ids = ['dias','horas','minutos','segundos'].map(id => document.getElementById(id));
 function actualizarCuenta(){
   let resto = Math.max(0, FECHA_BODA - new Date());
@@ -16,7 +28,7 @@ function actualizarCuenta(){
 actualizarCuenta();
 setInterval(actualizarCuenta, 1000);
 
-/* ---------- 3. MÚSICA (play / pausa) ---------- */
+/* ---------- 4. MÚSICA (play / pausa) ---------- */
 const audio = document.getElementById('cancion');
 const btnPlay = document.getElementById('btnPlay');
 const iconPlay = document.getElementById('iconPlay');
@@ -31,7 +43,7 @@ btnPlay.addEventListener('click', () => {
 audio.addEventListener('play',  () => { iconPlay.hidden = true;  iconPause.hidden = false; });
 audio.addEventListener('pause', () => { iconPlay.hidden = false; iconPause.hidden = true; });
 
-/* ---------- 4. CARRUSELES (deslizan solos y con el dedo) ---------- */
+/* ---------- 5. CARRUSELES (deslizan solos y con el dedo) ---------- */
 function iniciarCarrusel(id){
   const cont   = document.getElementById(id);
   const pista  = cont.querySelector('.pista');
@@ -59,6 +71,6 @@ function iniciarCarrusel(id){
 iniciarCarrusel('carrusel1');
 iniciarCarrusel('carrusel2');
 
-/* ---------- 5. CONFIRMAR ASISTENCIA (WhatsApp) ---------- */
+/* ---------- 6. CONFIRMAR ASISTENCIA (WhatsApp) ---------- */
 document.getElementById('btnConfirmar').href =
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(MENSAJE)}`;

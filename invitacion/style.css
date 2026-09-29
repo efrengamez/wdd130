@@ -4,7 +4,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{
   scroll-behavior:smooth;
-  scroll-snap-type:y mandatory;   /* efecto "se pega" al cambiar de sección */
+  scroll-snap-type:y mandatory;
 }
 body{
   background:var(--beige); color:var(--texto);
@@ -20,24 +20,39 @@ body{
   scroll-snap-align:start;
 }
 .page:nth-child(even){background:var(--beige-osc)}
-.page > .linea, .page > .carrusel, .page > .countdown, .page > .par{width:100%}
+.page > .linea, .page > .carrusel, .page > .countdown, .page > .par, .page > .marco{width:100%}
 
 .cursiva{font-style:italic;font-weight:500}
 .grande{font-size:1.45rem;line-height:1.7;color:var(--olivo-osc)}
 .chica{font-size:.95rem;letter-spacing:.08em;color:var(--olivo)}
 .titulo{font-family:'Pinyon Script',cursive;font-weight:400;font-size:2.6rem;color:var(--olivo-osc);margin-bottom:28px}
 
-/* fotos (la 1 y la 10 se quedan igual) */
+/* fotos 1 y 10 (se quedan igual) */
 .foto{display:block;width:100%;object-fit:cover;margin:32px auto 0}
 .arco{width:82%;aspect-ratio:3/4;border-radius:999px 999px 8px 8px;border:6px solid var(--beige-osc);box-shadow:0 0 0 1px var(--olivo)}
 .horizontal{aspect-ratio:3/2;border-radius:6px}
 
-/* fotos de parroquia y copas: se ven completas, sin recortar */
-.foto-lugar{
-  width:100%; aspect-ratio:1/1; object-fit:contain;
-  margin:20px auto 24px; border-radius:14px;
-  background:rgba(107,112,67,.12);
+/* ---------- MARCO CUADRADO: foto completa, sin estirar ---------- */
+.marco{
+  position:relative; aspect-ratio:1/1; overflow:hidden;
+  border-radius:16px; background:var(--olivo);
+  display:flex; align-items:center; justify-content:center;
 }
+/* fondo: la misma foto, difuminada */
+.marco::before{
+  content:""; position:absolute; inset:-20px;
+  background-image:var(--bg); background-size:cover; background-position:center;
+  filter:blur(18px) brightness(.9); opacity:.75;
+}
+/* foto al frente, completa y con sus proporciones reales */
+.marco img{
+  position:relative; z-index:1;
+  max-width:100%; max-height:100%;
+  width:auto; height:auto;
+  object-fit:contain; display:block;
+  box-shadow:0 4px 18px rgba(0,0,0,.25);
+}
+.lugar .marco{margin:20px 0 24px}
 
 /* invitación */
 .nombres{font-family:'Pinyon Script',cursive;font-weight:400;font-size:4.2rem;line-height:1.1;color:var(--olivo-osc);margin:14px 0 8px}
@@ -51,18 +66,14 @@ body{
 .countdown span{display:block;font-size:1.7rem;font-weight:600;color:var(--olivo-osc)}
 .countdown small{font-size:.8rem;color:var(--olivo)}
 
-/* carrusel: fotos completas en marco casi cuadrado */
+/* carrusel */
 .carrusel-sec{padding:40px 16px}
 .pista{
-  display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
-  border-radius:14px;
+  display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
+  scrollbar-width:none; border-radius:16px;
 }
 .pista::-webkit-scrollbar{display:none}
-.pista img{
-  flex:0 0 100%; scroll-snap-align:center;
-  aspect-ratio:1/1; object-fit:contain;      /* contain = se ve toda la foto */
-  background:rgba(107,112,67,.12);
-}
+.pista .marco{flex:0 0 100%; scroll-snap-align:center; border-radius:0}
 .puntitos{display:flex;justify-content:center;gap:8px;margin-top:14px}
 .puntitos span{width:8px;height:8px;border-radius:50%;background:var(--olivo);opacity:.3;transition:opacity .3s}
 .puntitos span.activo{opacity:1}

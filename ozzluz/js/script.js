@@ -12,3 +12,19 @@ function actualizar() {
 
 actualizar();
 setInterval(actualizar, 1000);
+
+// MÚSICA
+const musica = document.getElementById('musica');
+const btnMusica = document.getElementById('btn-musica');
+
+btnMusica.addEventListener('click', () => {
+  if (musica.paused) {
+    musica.play();
+    btnMusica.textContent = '❚❚';
+    btnMusica.setAttribute('aria-label', 'Pausar música');
+  } else {
+    musica.pause();
+    btnMusica.textContent = '▶';
+    btnMusica.setAttribute('aria-label', 'Reproducir música');
+  }
+});

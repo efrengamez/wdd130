@@ -1,7 +1,7 @@
 // Cambia estos valores con la información de Wendy y Adam.
 const CONFIG = {
   weddingDate: "", // Ejemplo: "2027-06-20T17:00:00"
-  dateLabel: "FECHA POR CONFIRMAR",
+  dateLabel: "2027-07-18T17:00:00",
 
   ceremony: {
     date: "Fecha por confirmar",

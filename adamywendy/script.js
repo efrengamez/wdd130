@@ -1,7 +1,6 @@
-/* Personaliza estos datos: fecha, lugar, enlaces, fotos y audio. */
+// Cambia estos valores con la información de Wendy y Adam.
 const CONFIG = {
-  // Fecha en formato YYYY-MM-DDTHH:MM:SS. Cambia la zona horaria si hace falta.
-  weddingDate: "2027-01-01T17:00:00",
+  weddingDate: "", // Ejemplo: "2027-06-20T17:00:00"
   dateLabel: "FECHA POR CONFIRMAR",
 
   ceremony: {
@@ -20,25 +19,55 @@ const CONFIG = {
   mapEmbedUrl: "",
   giftUrl: "",
   rsvpUrl: "",
-  musicUrl: "",
 
-  // Ejemplo: ["fotos/1.jpg", "fotos/2.jpg"]
-  photos: []
+  musicUrl: "audio/musica.mp3",
+  storyPhoto: "fotos/pareja.jpg",
+
+  // Cambia estas rutas por los nombres de tus fotos.
+  photos: [
+    "fotos/1.jpg",
+    "fotos/2.jpg",
+    "fotos/3.jpg"
+  ]
 };
 
-const $ = (id) => document.getElementById(id);
-const musicScreen = $("musicScreen");
-const audio = $("backgroundMusic");
+const byId = (id) => document.getElementById(id);
+const audio = byId("weddingMusic");
+const welcome = byId("welcome");
 
-function enterInvitation(withMusic) {
-  musicScreen.classList.add("is-hidden");
-
-  if (withMusic) {
-    playMusic();
-  }
+function setText(id, text) {
+  byId(id).textContent = text;
 }
 
-function playMusic() {
+function updateCountdown() {
+  const target = new Date(CONFIG.weddingDate).getTime();
+  const ids = ["days", "hours", "minutes", "seconds"];
+
+  if (!CONFIG.weddingDate || !Number.isFinite(target)) {
+    ids.forEach((id) => setText(id, "--"));
+    return;
+  }
+
+  const remaining = target - Date.now();
+
+  if (remaining <= 0) {
+    ids.forEach((id) => setText(id, "00"));
+    return;
+  }
+
+  const values = [
+    Math.floor(remaining / 86400000),
+    Math.floor((remaining % 86400000) / 3600000),
+    Math.floor((remaining % 3600000) / 60000),
+    Math.floor((remaining % 60000) / 1000)
+  ];
+
+  ids.forEach((id, index) => {
+    setText(id, String(values[index]).padStart(2, "0"));
+  });
+}
+
+function startMusic() {
   if (!CONFIG.musicUrl) return;
 
   if (audio.src !== new URL(CONFIG.musicUrl, document.baseURI).href) {
@@ -48,88 +77,77 @@ function playMusic() {
   audio.play().catch(() => {});
 }
 
-$("withMusic").addEventListener("click", () => enterInvitation(true));
-$("withoutMusic").addEventListener("click", () => enterInvitation(false));
+byId("enterWithMusic").addEventListener("click", () => {
+  welcome.classList.add("is-hidden");
+  startMusic();
+});
 
-$("musicToggle").addEventListener("click", () => {
+byId("enterSilent").addEventListener("click", () => {
+  welcome.classList.add("is-hidden");
+});
+
+byId("musicControl").addEventListener("click", () => {
   if (!CONFIG.musicUrl) return;
 
   if (audio.paused) {
-    playMusic();
+    startMusic();
   } else {
     audio.pause();
   }
 });
 
-function updateCountdown() {
-  const target = new Date(CONFIG.weddingDate).getTime();
-  const remaining = target - Date.now();
+audio.addEventListener("play", () => {
+  byId("musicControl").setAttribute("aria-label", "Pausar música");
+});
 
-  if (!Number.isFinite(target) || remaining <= 0) {
-    ["days", "hours", "minutes", "seconds"].forEach((id) => {
-      $(id).textContent = "00";
-    });
-    return;
-  }
+audio.addEventListener("pause", () => {
+  byId("musicControl").setAttribute("aria-label", "Reproducir música");
+});
 
-  const values = {
-    days: Math.floor(remaining / 86400000),
-    hours: Math.floor((remaining % 86400000) / 3600000),
-    minutes: Math.floor((remaining % 3600000) / 60000),
-    seconds: Math.floor((remaining % 60000) / 1000)
-  };
-
-  Object.entries(values).forEach(([id, value]) => {
-    $(id).textContent = String(value).padStart(2, "0");
-  });
-}
-
-function setText(id, value) {
-  $(id).textContent = value;
-}
-
-setText("dateLine", CONFIG.dateLabel);
+setText("dateLabel", CONFIG.dateLabel);
 setText("ceremonyDate", CONFIG.ceremony.date);
 setText("ceremonyTime", CONFIG.ceremony.time);
 setText("ceremonyPlace", CONFIG.ceremony.place);
-setText("partyDate", CONFIG.reception.date);
-setText("partyTime", CONFIG.reception.time);
-setText("partyPlace", CONFIG.reception.place);
+setText("receptionDate", CONFIG.reception.date);
+setText("receptionTime", CONFIG.reception.time);
+setText("receptionPlace", CONFIG.reception.place);
+
+byId("storyImage").src = CONFIG.storyPhoto;
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
 if (CONFIG.mapUrl) {
-  $("mapLink").href = CONFIG.mapUrl;
+  byId("mapLink").href = CONFIG.mapUrl;
 } else {
-  $("mapLink").hidden = true;
+  byId("mapLink").hidden = true;
 }
 
 if (CONFIG.mapEmbedUrl) {
-  const frame = document.createElement("iframe");
-  frame.src = CONFIG.mapEmbedUrl;
-  frame.loading = "lazy";
-  frame.title = "Mapa del lugar del evento";
-  frame.referrerPolicy = "no-referrer-when-downgrade";
-  $("mapFrame").replaceChildren(frame);
+  const map = document.createElement("iframe");
+  map.src = CONFIG.mapEmbedUrl;
+  map.loading = "lazy";
+  map.title = "Mapa del lugar de la celebración";
+  map.referrerPolicy = "no-referrer-when-downgrade";
+  byId("mapBox").replaceChildren(map);
 }
 
 if (CONFIG.giftUrl) {
-  $("giftLink").href = CONFIG.giftUrl;
+  byId("giftLink").href = CONFIG.giftUrl;
 } else {
-  $("giftLink").hidden = true;
+  byId("giftLink").hidden = true;
 }
 
 if (CONFIG.rsvpUrl) {
-  $("rsvpLink").href = CONFIG.rsvpUrl;
+  byId("rsvpLink").href = CONFIG.rsvpUrl;
 } else {
-  $("rsvpLink").hidden = true;
+  byId("rsvpLink").hidden = true;
 }
 
-const track = $("galleryTrack");
+const gallery = byId("galleryTrack");
 
 if (CONFIG.photos.length) {
-  track.replaceChildren(
+  gallery.replaceChildren(
     ...CONFIG.photos.map((src, index) => {
       const image = document.createElement("img");
       image.className = "gallery-item";
@@ -140,21 +158,26 @@ if (CONFIG.photos.length) {
     })
   );
 } else {
-  track.querySelectorAll(".gallery-item").forEach((item, index) => {
-    item.textContent = `Agrega foto ${index + 1}`;
-  });
+  gallery.replaceChildren(
+    ...[1, 2, 3].map((number) => {
+      const placeholder = document.createElement("div");
+      placeholder.className = "gallery-item gallery-placeholder";
+      placeholder.textContent = `Agrega foto ${number}`;
+      return placeholder;
+    })
+  );
 }
 
 function moveGallery(direction) {
-  const item = track.querySelector(".gallery-item");
+  const item = gallery.querySelector(".gallery-item");
 
   if (item) {
-    track.scrollBy({
-      left: direction * (item.getBoundingClientRect().width + 15),
+    gallery.scrollBy({
+      left: direction * (item.getBoundingClientRect().width + 14),
       behavior: "smooth"
     });
   }
 }
 
-$("prevPhoto").addEventListener("click", () => moveGallery(-1));
-$("nextPhoto").addEventListener("click", () => moveGallery(1));
+byId("previousPhoto").addEventListener("click", () => moveGallery(-1));
+byId("nextPhoto").addEventListener("click", () => moveGallery(1));

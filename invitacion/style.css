@@ -1,0 +1,79 @@
+:root{
+  --olivo:#6b7043; --olivo-osc:#3f4426; --beige:#f3ebdd; --beige-osc:#e6d9c0; --texto:#3a3d24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--beige); color:var(--texto);
+  font-family:'Cormorant Garamond',Georgia,serif; font-size:19px; line-height:1.5;
+  max-width:480px; margin:0 auto; overflow-x:hidden;
+}
+.page{padding:64px 28px; text-align:center}
+.page:nth-child(even){background:var(--beige-osc)}
+.cursiva{font-style:italic;font-weight:500}
+.grande{font-size:1.45rem;line-height:1.7;color:var(--olivo-osc)}
+.chica{font-size:.95rem;letter-spacing:.08em;color:var(--olivo)}
+.titulo{font-family:'Pinyon Script',cursive;font-weight:400;font-size:2.6rem;color:var(--olivo-osc);margin-bottom:28px}
+
+.foto{display:block;width:100%;object-fit:cover;margin:32px auto 0}
+.arco{width:82%;aspect-ratio:3/4;border-radius:999px 999px 8px 8px;border:6px solid var(--beige-osc);box-shadow:0 0 0 1px var(--olivo)}
+.redonda{width:78%;aspect-ratio:1;border-radius:50%;margin:20px auto 24px;border:5px solid var(--beige)}
+.horizontal{aspect-ratio:3/2;border-radius:6px}
+
+/* invitación */
+.nombres{font-family:'Pinyon Script',cursive;font-weight:400;font-size:4.2rem;line-height:1.1;color:var(--olivo-osc);margin:14px 0 8px}
+.fecha{font-size:1.25rem;letter-spacing:.06em}
+.play{margin:32px auto 26px;width:64px;height:64px;border-radius:50%;border:none;background:var(--olivo);cursor:pointer;display:grid;place-items:center;transition:transform .2s}
+.play:active{transform:scale(.94)}
+.play svg{width:28px;height:28px;fill:var(--beige)}
+.play[hidden],svg[hidden]{display:none}
+.countdown{display:flex;justify-content:center;gap:10px}
+.countdown div{background:var(--beige-osc);border:1px solid var(--olivo);border-radius:10px;width:70px;padding:10px 0}
+.countdown span{display:block;font-size:1.7rem;font-weight:600;color:var(--olivo-osc)}
+.countdown small{font-size:.8rem;color:var(--olivo)}
+
+/* carrusel */
+.carrusel-sec{padding:40px 0}
+.pista{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:0}
+.pista::-webkit-scrollbar{display:none}
+.pista img{flex:0 0 100%;scroll-snap-align:center;aspect-ratio:4/5;object-fit:cover}
+.puntitos{display:flex;justify-content:center;gap:8px;margin-top:14px}
+.puntitos span{width:8px;height:8px;border-radius:50%;background:var(--olivo);opacity:.3;transition:opacity .3s}
+.puntitos span.activo{opacity:1}
+
+/* padres */
+.par{margin-bottom:26px}
+.par h3{font-style:italic;font-weight:500;color:var(--olivo);font-size:1.15rem;margin-bottom:4px}
+
+/* lugares */
+.lugar-nombre{font-size:1.7rem;color:var(--olivo-osc);line-height:1.25}
+.hora{font-size:1.5rem;font-weight:600;margin-top:10px}
+.direccion{margin:6px 0 22px}
+.boton{display:inline-block;background:var(--olivo);color:var(--beige);text-decoration:none;padding:12px 30px;border-radius:999px;font-size:1.05rem;letter-spacing:.04em;transition:background .2s}
+.boton:hover{background:var(--olivo-osc)}
+.boton.chico{padding:8px 22px;font-size:.9rem}
+
+/* itinerario */
+.linea{position:relative;padding:10px 0}
+.linea::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--olivo);transform:translateX(-50%)}
+.evento{position:relative;width:50%;padding:0 22px 34px;display:flex;flex-direction:column;font-size:.98rem;line-height:1.3}
+.evento b{font-size:1.25rem;color:var(--olivo-osc)}
+.evento::after{content:"";position:absolute;top:6px;width:14px;height:14px;border-radius:50%;background:var(--olivo);border:3px solid var(--beige)}
+.izq{text-align:right}
+.izq::after{right:-7px}
+.der{margin-left:50%;text-align:left}
+.der::after{left:-7px}
+
+/* vestimenta */
+.etiqueta{font-style:italic;font-size:1.6rem;color:var(--olivo);margin-bottom:10px}
+.paleta{display:flex;justify-content:center;gap:12px;margin-top:22px}
+.paleta i{width:34px;height:34px;border-radius:50%;border:2px solid var(--beige)}
+
+/* rsvp y final */
+.texto{margin-bottom:26px}
+.final{padding-bottom:40px}
+
+/* aparición suave de la cita al cargar */
+.reveal{animation:sube 1.4s ease both}
+@keyframes sube{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.reveal{animation:none}html{scroll-behavior:auto}}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Luis y Sinai · 5 de diciembre de 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=Pinyon+Script&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 1. CITA + FOTO PRINCIPAL -->
+    <section class="page cita">
+        <p class="cursiva grande reveal">
+            Y cuando las cosas se dieron entre ambos, entendí que Dios reserva los viajes,<br>
+            los éxitos<br>
+            y los amores,<br>
+            para cuando Él considera correcto—
+        </p>
+        <img class="foto arco" src="img/luisandsina1.jpg" alt="Luis y Sinai">
+    </section>
+
+    <!-- 2. INVITACIÓN + PLAY + COUNTDOWN -->
+    <section class="page invitacion">
+        <p class="chica">tenemos el honor de invitarte a la boda de</p>
+        <h1 class="nombres">Luis y Sinai</h1>
+        <p class="fecha">5 de diciembre del 2026</p>
+
+        <button id="btnPlay" class="play" aria-label="Reproducir canción">
+            <svg id="iconPlay" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+            </svg>
+            <svg id="iconPause" viewBox="0 0 24 24" hidden>
+                <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
+            </svg>
+        </button>
+        <audio id="cancion" src="img/cancion.mp3" loop></audio>
+
+        <div class="countdown" id="countdown">
+            <div><span id="dias">00</span><small>días</small></div>
+            <div><span id="horas">00</span><small>horas</small></div>
+            <div><span id="minutos">00</span><small>min</small></div>
+            <div><span id="segundos">00</span><small>seg</small></div>
+        </div>
+    </section>
+
+    <!-- 3. CARRUSEL 1 -->
+    <section class="page carrusel-sec">
+        <div class="carrusel" id="carrusel1">
+            <div class="pista">
+                <img src="img/luisandsina2.jpg" alt="Foto 2">
+                <img src="img/luisandsina3.jpg" alt="Foto 3">
+                <img src="img/luisandsina4.jpg" alt="Foto 4">
+                <img src="img/luisandsina5.jpg" alt="Foto 5">
+            </div>
+            <div class="puntitos"></div>
+        </div>
+    </section>
+
+    <!-- 4. PADRES -->
+    <section class="page padres">
+        <h2 class="cursiva titulo">Nuestros padres</h2>
+        <div class="par">
+            <h3>Padres del novio</h3>
+            <p>Nombre del papá</p>
+            <p>Nombre de la mamá</p>
+        </div>
+        <div class="par">
+            <h3>Padres de la novia</h3>
+            <p>Nombre del papá</p>
+            <p>Nombre de la mamá</p>
+        </div>
+    </section>
+
+    <!-- 5. CEREMONIA -->
+    <section class="page lugar">
+        <h2 class="chica">Ceremonia</h2>
+        <img class="foto redonda" src="img/parroquia.jpg" alt="Parroquia">
+        <h3 class="cursiva lugar-nombre">Parroquia del Sagrado Corazón de Jesús</h3>
+        <p class="hora">3:00 pm</p>
+        <p class="direccion">Dirección de la parroquia, Ciudad</p>
+        <a class="boton" href="https://maps.google.com/?q=Parroquia+del+Sagrado+Corazon+de+Jesus" target="_blank"
+            rel="noopener">Cómo llegar</a>
+    </section>
+
+    <!-- 6. RECEPCIÓN -->
+    <section class="page lugar">
+        <h2 class="chica">Recepción</h2>
+        <img class="foto redonda" src="img/copas.jpg" alt="Copas">
+        <h3 class="cursiva lugar-nombre">Salón de eventos Platino</h3>
+        <p class="hora">7:00 pm</p>
+        <p class="direccion">Dirección del salón, Ciudad</p>
+        <a class="boton chico" href="https://maps.google.com/?q=Salon+de+eventos+Platino" target="_blank"
+            rel="noopener">Cómo llegar</a>
+    </section>
+
+    <!-- 7. ITINERARIO -->
+    <section class="page itinerario">
+        <h2 class="cursiva titulo">Itinerario</h2>
+        <div class="linea">
+            <div class="evento izq"><b>3:00 pm</b><span>Ceremonia religiosa</span></div>
+            <div class="evento der"><b>7:00 pm</b><span>Recepción</span></div>
+            <div class="evento izq"><b>7:10 pm</b><span>Entrada de novios y primer baile con mamás</span></div>
+            <div class="evento der"><b>8:00 pm</b><span>Cena</span></div>
+            <div class="evento izq"><b>9:00 pm</b><span>Se abre pista de baile</span></div>
+            <div class="evento der"><b>9:45 pm</b><span>Corte de pastel</span></div>
+            <div class="evento izq"><b>10:00 pm</b><span>Tanda</span></div>
+        </div>
+    </section>
+
+    <!-- 8. CARRUSEL 2 -->
+    <section class="page carrusel-sec">
+        <div class="carrusel" id="carrusel2">
+            <div class="pista">
+                <img src="img/luisandsina6.jpg" alt="Foto 6">
+                <img src="img/luisandsina7.jpg" alt="Foto 7">
+                <img src="img/luisandsina8.jpg" alt="Foto 8">
+                <img src="img/luisandsina9.jpg" alt="Foto 9">
+            </div>
+            <div class="puntitos"></div>
+        </div>
+    </section>
+
+    <!-- 9. VESTIMENTA -->
+    <section class="page vestimenta">
+        <h2 class="cursiva titulo">Código de vestimenta</h2>
+        <p class="etiqueta">Formal</p>
+        <p class="nota">Te pedimos vestir en tonos elegantes.<br>
+            Para que nuestra paleta luzca completa, te rogamos evitar el blanco, el beige y el verde olivo.</p>
+        <div class="paleta"><i style="background:#3b3f24"></i><i style="background:#8a8f5a"></i><i
+                style="background:#d9c9a8"></i></div>
+    </section>
+
+    <!-- 10. TE ESPERAMOS / RSVP -->
+    <section class="page rsvp">
+        <h2 class="cursiva titulo">Te esperamos</h2>
+        <p class="texto">Tu presencia es importante para nosotros.<br>Por favor confirma tu asistencia.</p>
+        <a id="btnConfirmar" class="boton" href="#" target="_blank" rel="noopener">Confirmar asistencia</a>
+    </section>
+
+    <!-- 11. FINAL -->
+    <section class="page final">
+        <p class="cursiva grande">Gracias por ser parte de nuestro día especial</p>
+        <img class="foto horizontal" src="img/luisandsina10.jpg" alt="Luis y Sinai">
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

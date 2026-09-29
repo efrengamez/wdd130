@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f1e9">
+    <meta name="description" content="Acompáñanos a celebrar la boda de Wendy y Adam.">
+    <title>Wendy &amp; Adam — ¡Nos casamos!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="music-screen" id="musicScreen" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+        <div class="music-card">
+            <p class="eyebrow">UNA CELEBRACIÓN DE AMOR</p>
+            <div class="mini-monogram" aria-hidden="true"><span>W</span><span>A</span></div>
+            <h1 id="welcomeTitle">Wendy <i>&amp;</i> Adam</h1>
+            <p>Nos encantará compartir este día contigo</p>
+            <div class="music-actions">
+                <button class="button button-dark" id="withMusic">Entrar con música</button>
+                <button class="button button-outline" id="withoutMusic">Entrar sin música</button>
+            </div>
+            <small>La música puede activarse después desde el botón ♫</small>
+        </div>
+    </div>
+
+    <header class="hero" id="inicio">
+        <nav class="top-nav" aria-label="Navegación principal">
+            <a href="#inicio" class="nav-mark">W <span>&amp;</span> A</a>
+            <div>
+                <a href="#evento">El evento</a>
+                <a href="#galeria">Galería</a>
+                <a href="#asistencia">Asistencia</a>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <p class="eyebrow">JUNTOS PARA SIEMPRE</p>
+            <div class="hero-monogram" aria-label="Monograma Wendy y Adam">
+                <span class="monogram-w">W</span>
+                <span class="monogram-a">A</span>
+            </div>
+            <h1>Wendy <span>&amp;</span> Adam</h1>
+            <p class="hero-subtitle">¡Nos casamos!</p>
+            <div class="ornament"><span></span> ❦ <span></span></div>
+            <a class="text-link" href="#cuenta">ACOMPÁÑANOS A CELEBRAR</a>
+        </div>
+        <a class="scroll-cue" href="#cuenta" aria-label="Desplazarse hacia abajo">↓</a>
+    </header>
+
+    <main>
+        <section class="countdown section" id="cuenta">
+            <p class="eyebrow">EL COMIENZO DE NUESTRA HISTORIA</p>
+            <h2>La cuenta regresiva</h2>
+            <p class="section-intro">Cada día estamos más cerca de celebrar este momento contigo.</p>
+            <div class="timer" aria-label="Cuenta regresiva">
+                <div><strong id="days">--</strong><span>DÍAS</span></div>
+                <div><strong id="hours">--</strong><span>HRS</span></div>
+                <div><strong id="minutes">--</strong><span>MIN</span></div>
+                <div><strong id="seconds">--</strong><span>SEG</span></div>
+            </div>
+            <p class="date-line" id="dateLine">FECHA POR CONFIRMAR</p>
+        </section>
+
+        <section class="story section">
+            <div class="story-photo photo-placeholder" role="img" aria-label="Fotografía de Wendy y Adam">
+                <span>Agrega aquí una foto de Wendy y Adam</span>
+            </div>
+            <div class="story-copy">
+                <p class="eyebrow">NUESTRA HISTORIA</p>
+                <h2>Un día para recordar</h2>
+                <p>Hay momentos que se vuelven inolvidables cuando los compartimos con las personas que más queremos.
+                    Nos encantaría que formaras parte de este día tan especial.</p>
+                <p class="signature">Con cariño,<br><span>Wendy &amp; Adam</span></p>
+            </div>
+        </section>
+
+        <section class="event section" id="evento">
+            <p class="eyebrow">RESERVA LA FECHA</p>
+            <h2>Detalles del evento</h2>
+            <div class="event-grid">
+                <article class="event-card">
+                    <span class="event-icon">♡</span>
+                    <h3>Ceremonia</h3>
+                    <p id="ceremonyDate">Fecha por confirmar</p>
+                    <p id="ceremonyTime">Hora por confirmar</p>
+                    <p id="ceremonyPlace">Lugar por confirmar</p>
+                </article>
+                <article class="event-card">
+                    <span class="event-icon">✧</span>
+                    <h3>Celebración</h3>
+                    <p id="partyDate">Fecha por confirmar</p>
+                    <p id="partyTime">Hora por confirmar</p>
+                    <p id="partyPlace">Lugar por confirmar</p>
+                </article>
+            </div>
+            <a class="button button-outline" id="mapLink" href="#evento" target="_blank" rel="noopener">Ver
+                ubicación</a>
+            <div class="map-frame" id="mapFrame">
+                <p>Agrega la dirección o el enlace del mapa en <code>script.js</code>.</p>
+            </div>
+        </section>
+
+        <section class="gifts section">
+            <div class="gift-mark">♡</div>
+            <p class="eyebrow">TU COMPAÑÍA ES NUESTRO MEJOR REGALO</p>
+            <h2>Mesa de regalos</h2>
+            <p class="section-intro">Si deseas hacernos un obsequio, aquí encontrarás nuestra mesa de regalos.</p>
+            <a class="button button-dark" id="giftLink" href="#" target="_blank" rel="noopener">Ver mesa de regalos</a>
+        </section>
+
+        <section class="gallery section" id="galeria">
+            <p class="eyebrow">ALGUNOS MOMENTOS JUNTOS</p>
+            <h2>Nuestra galería</h2>
+            <p class="section-intro">Reemplaza los cuadros por tus fotografías favoritas.</p>
+            <div class="gallery-wrap">
+                <button class="gallery-arrow" id="prevPhoto" aria-label="Foto anterior">‹</button>
+                <div class="gallery-track" id="galleryTrack">
+                    <div class="gallery-item photo-placeholder"><span>Foto 1</span></div>
+                    <div class="gallery-item photo-placeholder"><span>Foto 2</span></div>
+                    <div class="gallery-item photo-placeholder"><span>Foto 3</span></div>
+                    <div class="gallery-item photo-placeholder"><span>Foto 4</span></div>
+                    <div class="gallery-item photo-placeholder"><span>Foto 5</span></div>
+                    <div class="gallery-item photo-placeholder"><span>Foto 6</span></div>
+                    <div class="gallery-item photo-placeholder"><span>Foto 7</span></div>
+                    <div class="gallery-item photo-placeholder"><span>Foto 8</span></div>
+                    <div class="gallery-item photo-placeholder"><span>Foto 9</span></div>
+                    <div class="gallery-item photo-placeholder"><span>Foto 10</span></div>
+                </div>
+                <button class="gallery-arrow" id="nextPhoto" aria-label="Foto siguiente">›</button>
+            </div>
+        </section>
+
+        <section class="rsvp section" id="asistencia">
+            <p class="eyebrow">NOS HARÍA MUY FELICES VERTE</p>
+            <h2>Confirma tu asistencia</h2>
+            <p class="section-intro">Ayúdanos a preparar todo para recibirte. Confirma tu asistencia en el siguiente
+                enlace.</p>
+            <a class="button button-light" id="rsvpLink" href="#" target="_blank" rel="noopener">Confirmar
+                asistencia</a>
+            <p class="rsvp-note">Por favor confirma antes de la fecha límite indicada en tu invitación.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-monogram">W <span>&amp;</span> A</div>
+        <p>¡Nos vemos pronto!</p>
+        <small>Con amor, Wendy &amp; Adam</small>
+    </footer>
+
+    <button class="music-toggle" id="musicToggle" aria-label="Activar o pausar música"
+        title="Activar o pausar música">♫</button>
+    <audio id="backgroundMusic" loop preload="none"></audio>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 // Cambia estos valores con la información de Wendy y Adam.
 const CONFIG = {
-  weddingDate: "2027-07-18T17:00:00", // Ejemplo: "2027-06-20T17:00:00"
+  weddingDate: "2027-07-18T17:00:00",
   dateLabel: "18-07-27",
 
   ceremony: {
@@ -16,7 +16,7 @@ const CONFIG = {
   },
 
   mapUrl: "https://maps.app.goo.gl/7KGRY8JcamC9PMpf6",
-  mapEmbedUrl: "mapEmbedUrl: "https://www.google.com/maps?q=25.7517239,-100.2912136&output=embed",",
+  mapEmbedUrl: "https://www.google.com/maps?q=25.7517239,-100.2912136&output=embed",
   giftUrl: "",
   rsvpUrl: "",
 
@@ -128,7 +128,7 @@ if (CONFIG.mapEmbedUrl) {
   map.src = CONFIG.mapEmbedUrl;
   map.loading = "lazy";
   map.title = "Mapa del lugar de la celebración";
-  map.referrerPolicy = "no-referrer-when-downgrade";
+  map.referrerPolicy = "no-referrer-when-cross-origin";
   byId("mapBox").replaceChildren(map);
 }
 

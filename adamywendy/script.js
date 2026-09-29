@@ -1,22 +1,22 @@
 // Cambia estos valores con la información de Wendy y Adam.
 const CONFIG = {
-  weddingDate: "", // Ejemplo: "2027-06-20T17:00:00"
-  dateLabel: "2027-07-18T17:00:00",
+  weddingDate: "2027-07-18T17:00:00", // Ejemplo: "2027-06-20T17:00:00"
+  dateLabel: "18-07-27",
 
   ceremony: {
-    date: "Fecha por confirmar",
-    time: "Hora por confirmar",
-    place: "Lugar por confirmar"
+    date: "18-07-27",
+    time: "3:00 P.M.",
+    place: "Parroquia De El Sagrado Corazon"
   },
 
   reception: {
-    date: "Fecha por confirmar",
-    time: "Hora por confirmar",
-    place: "Lugar por confirmar"
+    date: "18-07-27",
+    time: "7:00 P.M.",
+    place: "Quinta San Nicolas"
   },
 
-  mapUrl: "",
-  mapEmbedUrl: "",
+  mapUrl: "https://maps.app.goo.gl/7KGRY8JcamC9PMpf6",
+  mapEmbedUrl: "mapEmbedUrl: "https://www.google.com/maps?q=25.7517239,-100.2912136&output=embed",",
   giftUrl: "",
   rsvpUrl: "",
 
